@@ -1,8 +1,7 @@
 FROM ruby:2.7.1
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /docker-rails-front
-COPY Gemfile /docker-rails-front/Gemfile
-COPY Gemfile.lock /docker-rails-front/Gemfile.lock
+COPY . /docker-rails-front
 RUN bundle install
 
 # Add a script to be executed every time the container starts.
